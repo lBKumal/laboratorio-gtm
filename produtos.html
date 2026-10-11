@@ -24,17 +24,46 @@
     <!-- End Google Tag Manager (noscript) -->
 
 
-    <h1>Nossos Produtos</h1>
+   
+<h1>Nossos Produtos</h1>
 
-    <p>Essa é a página de produtos do nosso laboratório.</p>
+<p>Essa é a página de produtos do nosso laboratório.</p>
 
-    <h2>Produto A</h2>
-    <p>Produto de teste — R$ 99,00</p>
-    <button>Comprar Produto A</button>
+<h2>Produto A</h2>
+<p>Produto de teste — R$ 99,00</p>
+<button id="comprar-produto-a">Comprar Produto A</button>
 
-    <h2>Produto B</h2>
-    <p>Produto de teste — R$ 149,00</p>
-    <button>Comprar Produto B</button>
+<h2>Produto B</h2>
+<p>Produto de teste — R$ 149,00</p>
+<button id="comprar-produto-b">Comprar Produto B</button>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  document.getElementById("comprar-produto-a")
+    .addEventListener("click", function() {
+      window.dataLayer.push({
+        event: "purchase_test",
+        product_name: "Produto A",
+        value: 99.00,
+        currency: "BRL"
+      });
+
+      alert("Compra de teste do Produto A!");
+    });
+
+  document.getElementById("comprar-produto-b")
+    .addEventListener("click", function() {
+      window.dataLayer.push({
+        event: "purchase_test",
+        product_name: "Produto B",
+        value: 149.00,
+        currency: "BRL"
+      });
+
+      alert("Compra de teste do Produto B!");
+    });
+</script>
 
     <br><br>
 
